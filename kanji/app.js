@@ -176,6 +176,26 @@ function() {
 function() {
     "use strict";
 
+    function revealKunyomi() {
+        function link(element) {
+                    $("#kunyomi").text(kanjiList[localStorage.lastKanjiIndex].kunyomi).fadeIn(300)
+                }
+            }
+        }
+        var directive = {
+            scope: {
+                list: "=",
+                charLength: "="
+            },
+            templateUrl: "/kanji/app/directives/revealKunyomi.view.html",
+            link: link
+        };
+        return directive
+    }
+}(),
+function() {
+    "use strict";
+
     function notification() {
         function link(scope, element, attrs) {
             localStorage.toggleNewsSeen ? scope.toggleNewsSeen = localStorage.toggleNewsSeen : (localStorage.toggleNewsSeen = "0", scope.toggleNewsSeen = localStorage.toggleNewsSeen), scope.toggleNewsUneen = function() {
