@@ -181,17 +181,14 @@ function() {
                     $("#kunyomi").text(kanjiList[localStorage.lastKanjiIndex].kunyomi).fadeIn(300)
                 }
             }
-        }
         var directive = {
             scope: {
                 list: "=",
                 charLength: "="
             },
             templateUrl: "/kanji/app/directives/revealKunyomi.view.html",
-            link: link
         };
         return directive
-    }
 }(),
 function() {
     "use strict";
